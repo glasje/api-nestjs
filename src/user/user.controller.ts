@@ -9,6 +9,7 @@ export class UserController {
   @Get()
   async findAll() {
     return await this.userService.findAll();
+    
   }
 
   @Post()
