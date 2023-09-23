@@ -13,7 +13,6 @@ import { configOptions } from './config/config-options';
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => {
         const mongoConfig = configService.get('mongo');
-
         return {
           uri: mongoConfig.uri,
         };
