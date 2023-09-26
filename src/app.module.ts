@@ -5,6 +5,7 @@ import { UserModule } from './user/user.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { configOptions } from './config/config-options';
+import { PetModule } from './pet/pet.module';
 @Module({
   imports: [
     ConfigModule.forRoot(configOptions),
@@ -18,9 +19,10 @@ import { configOptions } from './config/config-options';
         };
       },
       inject: [ConfigService],
-    }),],
+    }),
+    PetModule,
+  ],
   controllers: [AppController],
-  providers: [ConfigModule,
-    AppService],
+  providers: [ConfigModule, AppService],
 })
 export class AppModule {}
